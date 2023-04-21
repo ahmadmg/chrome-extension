@@ -32,23 +32,23 @@ h1.time {
     font-size: 5rem;
 }
 
-div#crypto {
+div#quote {
     font-size: 1.3rem;
 }
 
-div#crypto > p {
+div#quote > h4 {
     margin: 0;
 }
 
-div#crypto-top {
+div#quote {
     display: flex;
+    flex-direction: column;
+    width: 230px;
     align-items: center;
     margin-bottom: 5px;
 }
 
-div#crypto-top > span {
-    margin-left: 10px;
-}
+
 
 div#weather {
     display: flex;

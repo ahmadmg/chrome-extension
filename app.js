@@ -11,7 +11,27 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 		document.getElementById("author").textContent = `By: Dodi Achmad`
     })
 
-fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+// fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+//     .then(res => {
+//         if (!res.ok) {
+//             throw Error("Something went wrong")
+//         }
+//         return res.json()
+//     })
+//     .then(data => {
+//         document.getElementById("crypto-top").innerHTML = `
+//             <img src=${data.image.small} />
+//             <span>${data.name}</span>
+//         `
+//         document.getElementById("crypto").innerHTML += `
+//             <p>🎯: $${data.market_data.current_price.usd}</p>
+//             <p>👆: $${data.market_data.high_24h.usd}</p>
+//             <p>👇: $${data.market_data.low_24h.usd}</p>
+//         `
+//     })
+//     .catch(err => console.error(err))
+
+fetch("https://api.quotable.io/quotes/random")
     .then(res => {
         if (!res.ok) {
             throw Error("Something went wrong")
@@ -19,14 +39,9 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         return res.json()
     })
     .then(data => {
-        document.getElementById("crypto-top").innerHTML = `
-            <img src=${data.image.small} />
-            <span>${data.name}</span>
-        `
-        document.getElementById("crypto").innerHTML += `
-            <p>🎯: $${data.market_data.current_price.usd}</p>
-            <p>👆: $${data.market_data.high_24h.usd}</p>
-            <p>👇: $${data.market_data.low_24h.usd}</p>
+        document.getElementById("quote").innerHTML = `
+            <h4>${data[0].content}</h4>
+            <h5>${data[0].author}</h5>
         `
     })
     .catch(err => console.error(err))
